@@ -20,7 +20,7 @@
     ],
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["./src/*"]
     }
   },
   "include": [
@@ -31,6 +31,6 @@
     "src/app/page.jsx",
     "src/app/Auth/Registerpage/page.jsx",
     "src/app/home/page.jsx"
-  ],
+, "src/app/Guide/guide/page.jsx", "src/app/Guide/guide/guide-page.jsx", "src/app/Guide/guide-page.jsx"  ],
   "exclude": ["node_modules"]
 }

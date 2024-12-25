@@ -3,37 +3,44 @@
 import { useEffect, useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
+import Link from 'next/link'
 
 const templates = [
   {
     name: 'Crop Rotation Planner',
     description: 'Optimize your field usage with our intelligent crop rotation system.',
     image: '/images/paddyguide.png?height=400&width=600',
+    href: 'Guide/guide',
   },
   {
     name: 'Pest Management Tracker',
     description: 'Monitor and manage pest infestations effectively across your farm.',
     image: '/images/prediction.png?height=400&width=600',
+    href: '/pest-management',
   },
   {
     name: 'Weather Forecast',
     description: 'Accurately predict and track weather for the next 10 days in your location.',
     image: '/images/weather.png?height=400&width=600',
+    href: '/weather-forecast',
   },
   {
     name: 'Chemical and Pesticide Usage',
     description: 'Efficiently allocate resources based on crop needs and weather conditions.',
-    image: '/images/chimicals.png?height=400&width=600',
+    image: '/images/chemicals.png?height=400&width=600',
+    href: '/chemical-usage',
   },
   {
     name: 'News and Updates',
     description: 'Keep track of various agriculture-related news and updates for farmers.',
-    image: '/images/neaws.png?height=400&width=600',
+    image: '/images/news.png?height=400&width=600',
+    href: '/news-updates',
   },
   {
     name: 'Equipment Maintenance Log',
     description: 'Schedule and track maintenance for all your farming equipment.',
     image: '/images/equipment.png?height=400&width=600',
+    href: '/equipment-maintenance',
   },
 ]
 
@@ -48,10 +55,9 @@ export default function Templates() {
     setStartIndex((prevIndex) => (prevIndex - 3 + templates.length) % templates.length)
   }
 
-  // Auto-rotation of templates every 2 seconds
   useEffect(() => {
     const interval = setInterval(nextTemplates, 2000)
-    return () => clearInterval(interval) // Clean up interval on component unmount
+    return () => clearInterval(interval)
   }, [])
 
   return (
@@ -68,24 +74,30 @@ export default function Templates() {
             const template = templates[(startIndex + offset) % templates.length]
             return (
               <article key={template.name} className="flex max-w-xl flex-col items-start justify-between">
-                <div className="relative w-full">
-                  <img
-                    src={template.image}
-                    alt={template.name}
-                    className="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
-                  />
-                  <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
-                </div>
+                <Link href={template.href} passHref>
+                  <div className="relative w-full cursor-pointer">
+                    <img
+                      src={template.image}
+                      alt={template.name}
+                      className="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
+                    />
+                    <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
+                  </div>
+                </Link>
                 <div className="max-w-xl">
                   <div className="mt-8 flex items-center gap-x-4 text-xs">
-                    <Button variant="outline" className="relative z-10 rounded-full px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">
-                      Use 
-                    </Button>
+                    <Link href={template.href} passHref>
+                      <Button variant="outline" className="relative z-10 rounded-full px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">
+                        Use
+                      </Button>
+                    </Link>
                   </div>
                   <div className="group relative">
                     <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
-                      <span className="absolute inset-0" />
-                      {template.name}
+                      <Link href={template.href}>
+                        <span className="absolute inset-0" />
+                        {template.name}
+                      </Link>
                     </h3>
                     <p className="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">{template.description}</p>
                   </div>
