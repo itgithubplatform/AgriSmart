@@ -9,7 +9,7 @@ const navigation = [
   { name: 'Why AgriSmart', href: '#' },
   { name: 'Features', href: '#features' },
   { name: 'Templates', href: '#templates' },
-  { name: 'Pricing', href: '#' },
+  //{ name: 'Pricing', href: '#' },
 ]
 
 export default function Navbar() {

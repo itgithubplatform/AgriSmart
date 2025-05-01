@@ -25,7 +25,7 @@ export default function CallToAction() {
               Start using AgriSmart today.
             </h2>
             <p className="mt-6 text-lg leading-8 text-gray-300">
-              Join thousands of farmers who are already benefiting from our smart agricultural solutions. Try AgriSmart risk-free for 30 days.
+               join and help farmers for smart agricultural solutions.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6 lg:justify-start">
               <Button className="bg-white text-gray-900 hover:bg-gray-100">

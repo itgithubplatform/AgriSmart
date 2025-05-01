@@ -8,7 +8,7 @@ interface ConfettiProps {
   duration?: number
 }
 
-export function Confetti({ duration = 3000 }: ConfettiProps) {
+export function Confetti({ duration = 100000 }: ConfettiProps) {
   const [isActive, setIsActive] = useState(true)
 
   useEffect(() => {

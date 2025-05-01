@@ -16,7 +16,7 @@ const templates = [
     name: 'Pest Management Tracker',
     description: 'Monitor and manage pest infestations effectively across your farm.',
     image: '/images/prediction.png?height=400&width=600',
-    href: '/pest-management',
+    href: 'upload',
   },
   {
     name: 'Weather Forecast',
