@@ -2,8 +2,9 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import Navbar from '@/_nav_/Navbar';
-import Footer from '@/_nav_/Footer';
+//import Navbar from '@/_nav_/Navbar';
+//import Footer from '@/_nav_/Footer';
+import '@/_nav_/globals.css'; // Ensure global styles are imported
 import { useRouter } from 'next/navigation';
 
 
