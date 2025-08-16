@@ -108,7 +108,7 @@ export default function HomePage() {
       
       {/* Footer */}
       <footer className="bg-green-700 text-white text-center py-4 mt-8 sm:mt-12">
-        <p>&copy; 2024 Agri Smart Portal. All rights reserved.</p>
+        <p>&copy; 2025 Agri Smart Portal. All rights reserved.</p>
       </footer>
     </div>
   );
